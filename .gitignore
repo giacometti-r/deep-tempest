@@ -11,4 +11,4 @@ scripts/__pycache__
 scripts/*.jpg
 scripts/*.png
 *.log
-
+gr-tempest/docs/

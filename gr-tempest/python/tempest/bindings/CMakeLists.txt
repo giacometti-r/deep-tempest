@@ -45,6 +45,9 @@ GR_PYBIND_MAKE_OOT(tempest
    gr::tempest
    "${tempest_python_files}")
 
+# Ensure destination directory exists
+file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/test_modules/gnuradio/tempest)
+
 # copy in bindings .so file for use in QA test module
 add_custom_target(
   copy_bindings_for_tests ALL
@@ -53,4 +56,4 @@ add_custom_target(
     ${CMAKE_BINARY_DIR}/test_modules/gnuradio/tempest/
   DEPENDS tempest_python)
 
-install(TARGETS tempest_python DESTINATION ${GR_PYTHON_DIR}/gnuradio/tempest COMPONENT pythonapi)
+install(TARGETS tempest_python DESTINATION ${GR_PYTHON_DIR}/tempest COMPONENT pythonapi)
